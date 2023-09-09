@@ -8,21 +8,16 @@ const VideoCards = ({ url, color, nombreCategoria }) => {
     const [videos,setVideos] = useState([])
     const [videoAEliminar,setVideoAEliminar] = useState(null)
     const [solicitarDatosVideos,setSolicitarDatosVideos] = useState(false)
-    console.log('Voy a eliminar el video: '+videoAEliminar)
 
     useEffect(()=>{
         obtenerDatos('/videos', setVideos)
         setSolicitarDatosVideos(false)
     },[solicitarDatosVideos])
 
-
-
     let colorCard = {
         border: `2px solid ${color}`, 
         backgroundColor: `${color}`   
     }
-
-
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const openModal = (id) => {
@@ -48,15 +43,15 @@ const VideoCards = ({ url, color, nombreCategoria }) => {
         <>
             {
                 videos.map(video => {
-                    const { id, urlVideo, urlImagen, categoria } = video
-                    if(categoria === nombreCategoria){
+                    const { id, url, image, categorie } = video
+                    if(categorie === nombreCategoria){
                         return (
                         <div className='videocard_container' key={id}>
                             <button className='videocard_btn' onClick={() => openModal(`/videos/${id}`)}>X</button>
-                        <Link to={`${urlVideo}`} target="_blank" rel="noopener noreferrer" >
+                        <Link to={`${url}`} target="_blank" rel="noopener noreferrer" >
                             
                             <div className='videocard' style={ colorCard } key={id}>
-                                <img src={`${urlImagen}`} alt="Imagen video card" key={id}/>
+                                <img src={`${image}`} alt="Imagen video card" key={id}/>
                                 
                             </div>
                         </Link>

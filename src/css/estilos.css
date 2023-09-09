@@ -13,18 +13,17 @@ img {
 /* Header */
 .header{
     background-color: #000000;
-    border-bottom: 2px solid #2A7Ae4;
-    
+    border-bottom: 3px solid #2A7Ae4;
 }
 
 .header__contenido{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 94px;
+    height: 9vh;
 }
 
-.header__btn{
+.header__btn a{
     display: inline-block;
     color: #F5F5F5;
     background-color: #000000;
@@ -38,7 +37,15 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .3s ease-in-out;
 }
+
+
+.header__btn a:hover {
+    background-color: #F5F5F5;
+    color: #000000;
+}
+
 
 @media screen and (max-width:386px ) {
     .header__nav{
@@ -77,6 +84,15 @@ img {
 Link .hero__player{
     max-width: 40%;
     cursor: pointer;
+}
+
+.hero__player img{
+    max-width: 100%;
+    transition: .3s ease-in-out;
+}
+
+.hero__player img:hover{
+    transform: scale(1.05);
 }
 
 .hero__categoria{
@@ -258,41 +274,47 @@ Link .hero__player{
     color: #E5E5E5;
     font-weight: bold;
     position: relative;
+    transition: .2s;
+}
+
+.videocard_container:hover {
+    transform: scale(1.03);
 }
 
 
 .videocard{
     min-width: 436px;
-    min-height: 264px;
+    min-height: 245px;
     max-width: 432px;
-    max-height: 260px;
+    max-height: 240px;
     border-radius: 10px;
     overflow: hidden;
 }
 
 .videocard img {
     object-fit: cover;
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     z-index: -1;
 }
 
 .videocard_btn{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    border-radius: 50%;
+    border-radius: 5px;
     border: none;
     box-shadow: 1px 10px 5px 5px rgba(0, 0, 0, 0.5);
-    padding: 8px;
+    padding: 5px 10px;
     text-align: right;
     right: -10px;
     top: -10px;
     position: absolute;
+    transition: .1s ease-in-out;
 }
 
 .videocard_btn:hover{
     color: #ffffff;
-    background-color: #2A7AE4;
+    background-color: #a31818;
 }
 
 @media screen and (max-width:386px ) {
@@ -308,30 +330,24 @@ Link .hero__player{
 
 footer{
     background-color: black;
-    padding: 20px 0;
+    height: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-top: 2px solid #2A7Ae4;
-    padding-bottom: 60px;
     margin-top: 40px;
 }
 
 .footer__div{
-   display: none;
+    display: none;
     width: 100%;
     /* display: none; */
 }
 
-.footer__logo{
-    width: 240px;
-    height: 56px;
-}
-
 .footer__parrafo{
     color: #F5F5F5;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .footer__btn{

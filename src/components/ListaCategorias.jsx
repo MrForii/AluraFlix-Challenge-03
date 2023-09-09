@@ -7,7 +7,7 @@ const ListaCategorias = () => {
     const [videos,setVideos] = useState([])
 
     useEffect(()=>{
-        obtenerDatos('/categorias',setCategorias)
+        obtenerDatos('/categories',setCategorias)
         obtenerDatos('/videos',setVideos)
     },[])
 
@@ -19,9 +19,9 @@ const ListaCategorias = () => {
                 {
                     categorias.map((categoria) => {
 
-                        const {id, nombre, descripcion, color} = categoria
+                        const {id, name, description, color} = categoria
 
-                        if (videos.some( video => video.categoria === nombre)){
+                        if (videos.some( video => video.categorie === name)){
                             let colorLista = {
                                 backgroundColor: color
                             }
@@ -29,12 +29,12 @@ const ListaCategorias = () => {
                             return (
                                     <div className="categorias__contenido container" key={id}>
                                         <div className="categorias__titulo">
-                                            <div className="categorias__nombre" style={ colorLista }>{ nombre }</div>
-                                            <div className="categorias__descripcion">{ descripcion }</div>
+                                            <div className="categorias__nombre" style={ colorLista }>{ name }</div>
+                                            <div className="categorias__descripcion">{ description }</div>
                                         </div>
                                         <div className="categorias__listavideos">
     
-                                            <VideoCard url='/videos' nombreCategoria={nombre} color={ color }/>
+                                            <VideoCard url='/videos' nombreCategoria={name} color={ color }/>
                                             
                                         </div>
                                     </div>

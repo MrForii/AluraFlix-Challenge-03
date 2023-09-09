@@ -13,7 +13,7 @@ const NuevaCategoria = () =>{
     const [nombre, setNombre] = useState('')
     const [descripcion, setDescripcion] = useState('')
     const [color, setColor] = useState('')
-    const [codigo, setCodigo] = useState('')
+
     const [idActualizar, setIdActualizar] = useState('11')
 
     const [videos, setVideos] = useState([])
@@ -24,7 +24,7 @@ const NuevaCategoria = () =>{
     
     useEffect(() => {
             obtenerDatos('/videos',setVideos)
-            obtenerDatos('/categorias',setCategorias)
+            obtenerDatos('/categories',setCategorias)
             setSolicitarDatos(false)
         },[solicitarDatos])
     
@@ -33,39 +33,38 @@ const NuevaCategoria = () =>{
             setNombre('')
             setDescripcion('')
             setColor('')
-            setCodigo('')
     }
 
     const manejarEnvio = (e) => {
         e.preventDefault()
         
-        const id = uuidv4()
         const datosAEnviar = {
-            nombre,
-            descripcion,
-            color,
-            codigo,
-            id
-        }
-
-        if(categorias.some((categoria) => categoria.nombre.toLowerCase() === datosAEnviar.nombre.toLowerCase()))
-        {
-            const url = `'/categorias/${idActualizar}'`
-            console.log(url)
-
-            const datosAActualizar = {
-                id: idActualizar,
                 nombre,
                 descripcion,
                 color,
-                codigo,
+                id: idActualizar
+            }
+
+        if(categorias.some((categoria) => categoria.name === datosAEnviar.nombre))
+        {
+            const url = `/categories/${datosAEnviar.id}`
+            console.log(url)
+
+            const datosAActualizar = {
+                id,
+                name: nombre,
+                description: descripcion,
+                color,
             }
 
             actualizarDatos(url,datosAActualizar)
-            // alert('Ya existe una categoría con ese nombre, favor verificar en la tabla inferior')
+            // alert('Ya existe una categoría con ese nombre, favor 
+            // verificar en la tabla inferior')
         }else {
+            
+
             console.log(datosAEnviar)
-            enviarDatos('/categorias',datosAEnviar);
+            enviarDatos('/categories',datosAEnviar);
             setSolicitarDatos(true);
             manejarLimpiar()
         }
@@ -73,20 +72,14 @@ const NuevaCategoria = () =>{
         
     }
 
-    const manejarEditar = (id, nombre, descripcion, color, codigo) => {
+    const manejarEditar = (id, nombre, descripcion, color) => {
         const formulario = document.querySelector('form')
         
         window.scrollTo({ top: 0, behavior: "smooth" });
-        //formulario.scrollIntoView({ behavior: "smooth" });
-        
-       
-            
         setNombre(nombre);
         setDescripcion(descripcion);
         setColor(color);
-        setCodigo(codigo)
-
-
+        
     }
 
     const EstilosBtnGuardar = {
@@ -143,14 +136,6 @@ const NuevaCategoria = () =>{
                             required
                             valor={color}
                             actualizarValor={setColor}
-                        />
-
-                        <CampoTexto 
-                            titulo='Código de seguridad' 
-                            error='' 
-                            required
-                            valor={codigo}
-                            actualizarValor={setCodigo}
                         />
 
                         <div className="botones">

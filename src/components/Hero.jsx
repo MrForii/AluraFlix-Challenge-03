@@ -12,7 +12,7 @@ const Hero = ()=>{
                     
                     <p className='hero__descripcion'>Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.</p>
                     <div className='hero__ver_contenedor'>
-                         <Link className='hero__ver' to='https://www.youtube.com/watch?v=ov7vA5HFe6w&t' target='_blank' rel="noopener noreferrer">Ver</Link>
+                        <Link className='hero__ver' to='https://www.youtube.com/watch?v=ov7vA5HFe6w&t' target='_blank' rel="noopener noreferrer">Ver</Link>
                     </div>
                 </div>
                 <div className='hero__video'>

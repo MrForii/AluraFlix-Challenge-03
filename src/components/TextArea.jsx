@@ -3,7 +3,6 @@ import '../css/estilos.css'
 const TextArea = ({titulo, required, error, valor, actualizarValor}) => {
 
     const manejarCambio = (e) => {
-        console.log('cambio',e.target.value)
         actualizarValor(e.target.value)
     }
 

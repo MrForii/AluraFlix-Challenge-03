@@ -6,7 +6,7 @@ const ListaOpciones = ({titulo, required, error, valor, actualizarValor}) => {
     const [categorias,setCategorias] = useState([])
 
     useEffect(()=>{
-        obtenerDatos('/categorias',setCategorias)
+        obtenerDatos('/categories',setCategorias)
     },[])
 
     const manejarCambio = (e) => {
@@ -22,7 +22,7 @@ const ListaOpciones = ({titulo, required, error, valor, actualizarValor}) => {
                     {
                         categorias.map((categoria, i) => {
                             return(
-                                <option value={categoria.nombre} key={i}>{categoria.nombre}</option>
+                                <option value={categoria.name} key={i}>{categoria.name}</option>
                             )
                         })
                     }

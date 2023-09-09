@@ -17,7 +17,7 @@ const Footer = () =>{
         flexdirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '20px 0'
+        padding: '10px 0'
     }    
 
     return (
@@ -27,7 +27,7 @@ const Footer = () =>{
                 </div>
                 
                 <img className='footer__logo' src={LogoAluraFlix} alt="Logo AluraFlix" />
-                <p className='footer__parrafo'>Site hecho en <strong>#challenge</strong> de <span className='footer__span'>Alura Latam</span> por <Link to='https://www.linkedin.com/in/carlos-munera-259969262' target='_blank'><span className='footer__span'>Carlos Alberto Múnera</span></Link></p>
+                <p className='footer__parrafo'><strong className='footer__span'>AluraFlix</strong> por <Link to='www.linkedin.com/in/rodrigo-valdez7' target='_blank'><span className='footer__span'>Rodrigo Valdez</span></Link></p>
         </footer>
     )
 }

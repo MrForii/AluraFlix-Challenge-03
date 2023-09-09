@@ -24,16 +24,6 @@ function App() {
         </Routes>
         <Footer/>
       </Router>
-
-
-
-      {/* <button onClick={()=>setModalOpen(true)}>Abrir Modal</button>
-      {modalOpen &&(
-      <Modal onSubmit={null} onCancel={null} onClose={manejarModal}>
-        <h1>Eliminar Video</h1>
-        <p>¿Desea continuar con esta acción?</p>
-      </Modal>  
-      )} */}
     </div>
   );
 }

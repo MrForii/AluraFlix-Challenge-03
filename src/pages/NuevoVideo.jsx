@@ -14,7 +14,6 @@ const NuevoVideo = () =>{
     const[urlImagen,setUrlImagen] = useState('')
     const[categoria,setCategoria] = useState('')
     const[descripcion,setDescripcion] = useState('')
-    const[codigoSeguridad,setCodigoSeguridad] = useState('')
     
 
     const manejarLimpiar = () => {
@@ -29,12 +28,11 @@ const NuevoVideo = () =>{
         e.preventDefault()
         const id = uuidv4()
         let datosAEnviar = {
-            nombre,
-            urlVideo,
-            urlImagen,
-            descripcion,
-            categoria,
-            codigoSeguridad,
+            title: nombre,
+            url: urlVideo,
+            image: urlImagen,
+            description: descripcion,
+            categorie: categoria,
             id
         }
         enviarDatos('/videos',datosAEnviar)
@@ -125,13 +123,6 @@ const NuevoVideo = () =>{
                             required={true} 
                             valor={descripcion} 
                             actualizarValor={setDescripcion} 
-                        />
-
-                        <CampoTexto 
-                            titulo='Código de seguridad' 
-                            mensaje="" 
-                            required valor={codigoSeguridad}
-                            actualizarValor={ setCodigoSeguridad } 
                         />
 
                         <div className="barra__botones">
