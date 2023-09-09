@@ -45,18 +45,19 @@ const NuevaCategoria = () =>{
                 id: idActualizar
             }
 
-        if(categorias.some((categoria) => categoria.name === datosAEnviar.nombre))
+
+        if(categorias.some((categoria) => categoria.id === datosAEnviar.id))
         {
             const url = `/categories/${datosAEnviar.id}`
             console.log(url)
 
             const datosAActualizar = {
-                id,
+                id: datosAEnviar.id,
                 name: nombre,
                 description: descripcion,
                 color,
             }
-
+            console.log(datosAActualizar)
             actualizarDatos(url,datosAActualizar)
             // alert('Ya existe una categoría con ese nombre, favor 
             // verificar en la tabla inferior')
@@ -76,6 +77,7 @@ const NuevaCategoria = () =>{
         const formulario = document.querySelector('form')
         
         window.scrollTo({ top: 0, behavior: "smooth" });
+        setIdActualizar(id)
         setNombre(nombre);
         setDescripcion(descripcion);
         setColor(color);
