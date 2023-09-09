@@ -2,9 +2,6 @@
 
 AluraFlix plataforma de videos, proyecto realizado para el curso de Desarrollo Web Front End en ALura - Oracle ONE Next Education
 
-Este proyecto ha sido realizado con [Create React App](https://github.com/facebook/create-react-app) 
-![Alt text](src/VistaPrevia.PNG)
-
 ## `Creando componentes`
 Sprint 1:
 Componentes creados para este Sprint:
@@ -31,11 +28,3 @@ Sprint 2:
 * Styled-components.
 * Axios.
 
-## `Importante`
-* Las tres primeras categorias o sus videos, por cuestiones de mantener el diseño como el requerido en figma no pueden ser eliminadas, para los nuevas categorias y videos agregados posteriormente si aplican las funcionalidades de crear, editar o remover.
-
-
-## Acerca del autor:
-
-* [Alura - Oracle ONE](https://app.aluracursos.com/user/karlosmunera)
-* [LinkedIn](https://www.linkedin.com/in/carlos-munera-259969262 "Linkedin")
