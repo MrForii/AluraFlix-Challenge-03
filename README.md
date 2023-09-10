@@ -1,4 +1,4 @@
-# Challenge ONE React `Sprint 02` - Aluraflix
+# Challenge ONE React - Aluraflix
 
 AluraFlix plataforma de videos, proyecto realizado para el curso de Desarrollo Web Front End en ALura - Oracle ONE Next Education
 
@@ -18,9 +18,9 @@ Componentes creados para este Sprint:
 Sprint 2:
 * Se implementa conexion con fake API (mackapi.io). No se requiere el uso del archivo datos_iniciales.json.
 * Componente para registro de nueva categoria.
-* Funcionalidad de editar categoría. (En desarrollo). 
+* Funcionalidad de editar categoría.. 
 * Componente para registro de nuevo Video. 
-* Componente Carrusel videos en página principal (se implementa la funcionalidad de remover videos).
+* Componente Carrusel videos en página principal.
 
 
 ## Biliotecas utilizadas
